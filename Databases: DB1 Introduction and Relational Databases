@@ -1,0 +1,52 @@
+Databases: DB1 Introduction and Relational Databases
+
+Database = set of named relations (or tables)
+Each relation has a set of named attributes (or columns)
+Each tuple (or row) has a value for each attribute
+Each attribute has a type (or domain)
+Schema - structural description of relations in database
+Instance - actual contents at given point in time
+NULL - special value for "unkown" or "undefined"
+Key - attribute whose value is unique in each tuple (Keys are often denoted by underlining the set of key attributes.)
+Or set of attributes whose combined values are unique
+
+Creating relations (tables) in SQL
+Create Table student(ID, name, GPA, photo)
+Create Table college (name string, state char(2), enrollment integer)
+
+Used by all major commercial database systems
+Very simple model
+Query wieh high-level languages: simple yet expressive
+Efficient implementations
+
+====================
+Querying Relational Databases
+====================
+
+Steps in creating and using a (relational) database
+  1. Design schema; create using DDL
+  2. "Bulk load" initial data
+  3. Repear: execute queries and modifications
+
+Ad-hoc queries in high-level language
+  - All students with GPA > 3.7 applying to Stanford and MIT only
+  - All engineering departments in CA with < 500 applicants
+  - College with highest average accept rate over last 5 years
+ - Some easy to pose; some a bit harder
+ - Some easy for DBMS to execute efficiently; some harder
+ - "Query language" also used to modify data
+
+Queries return relations ("compositional", "closed")
+
+Query Languages
+ex)IDs of students with GPA > 3.7 applying to Stanford
+- Relational Algera - formal language
+- SQL - actual/implemented language
+ > select Student.ID 
+ From student, Apply 
+ where student.ID=Apply.ID 
+ AND GPA>3.7 and college='stanford'
+
+====================
+
+====================
